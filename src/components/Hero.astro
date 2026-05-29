@@ -1,0 +1,38 @@
+---
+import { profile, profileLinks } from "../data/profile";
+import LinkButton from "./LinkButton.astro";
+---
+
+<section id="top" class="hero" aria-labelledby="hero-title">
+  <div class="hero-avatar" aria-label={`${profile.shortName} profile image`}>
+    <img
+      src={profile.avatar}
+      alt={`${profile.shortName} portrait`}
+      width="240"
+      height="240"
+      loading="eager"
+      onerror="this.setAttribute('hidden', ''); this.nextElementSibling.removeAttribute('hidden')"
+    />
+    <div class="avatar-placeholder" hidden>
+      <span>ZZ</span>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">Academic Homepage</p>
+    <h1 id="hero-title">{profile.name}</h1>
+    <p class="hero-title">{profile.title}</p>
+    <p class="hero-summary">{profile.summary}</p>
+
+    <div class="hero-actions" aria-label="Profile links">
+      <LinkButton href={profileLinks.scholar} label="Google Scholar" variant="primary" />
+      <LinkButton href={profileLinks.github} label="GitHub" />
+      <LinkButton href={profileLinks.email} label="Email" />
+      <LinkButton href={profileLinks.cv} label="CV" />
+    </div>
+
+    <div class="keyword-list" aria-label="Research keywords">
+      {profile.keywords.map((keyword) => <span>{keyword}</span>)}
+    </div>
+  </div>
+</section>
