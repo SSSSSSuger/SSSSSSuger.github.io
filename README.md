@@ -1,6 +1,6 @@
 # Zhihao Zhu Academic Homepage
 
-Personal academic homepage for Zhihao Zhu / 朱志豪, focused on efficient
+Personal academic homepage for Zhihao Zhu / 朱志浩, focused on efficient
 generative Vision-Language-Action models for autonomous driving.
 
 The site is built with Astro, TypeScript, and Tailwind CSS. Content is kept in

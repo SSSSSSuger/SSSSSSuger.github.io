@@ -1,12 +1,12 @@
 export const profileLinks = {
   scholar: "https://scholar.google.com/citations?user=qE0aPcQAAAAJ&hl=en",
   github: "TODO: 填写我的 GitHub 链接",
-  email: "mailto:TODO:填写我的邮箱",
+  email: "mailto:falsestunch@gmail.com",
   cv: "/cv.pdf",
 } as const;
 
 export const profile = {
-  name: "Zhihao Zhu / 朱志豪",
+  name: "Zhihao Zhu / 朱志浩",
   shortName: "Zhihao Zhu",
   title: "Master Student, Fudan University",
   focus: "Efficient Generative Vision-Language-Action Models for Autonomous Driving",

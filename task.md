@@ -66,7 +66,7 @@
 导航栏左侧显示：
 
 ```text
-Zhihao Zhu / 朱志豪
+Zhihao Zhu / 朱志浩
 ```
 
 右侧导航显示：
@@ -97,7 +97,7 @@ Contact
 Hero 区域显示以下内容：
 
 ```text
-Zhihao Zhu / 朱志豪
+Zhihao Zhu / 朱志浩
 
 Master Student, Fudan University
 
@@ -132,7 +132,7 @@ CV
 const profileLinks = {
   scholar: "https://scholar.google.com/citations?user=qE0aPcQAAAAJ&hl=en",
   github: "TODO: 填写我的 GitHub 链接",
-  email: "mailto:TODO:填写我的邮箱",
+  email: "mailto:falsestunch@gmail.com",
   cv: "/cv.pdf"
 }
 ```
@@ -617,9 +617,9 @@ AR-to-Diffusion Distillation
 
 ```text
 ------------------------------------------------------------
-Zhihao Zhu / 朱志豪              About Research Publications Projects ...
+Zhihao Zhu / 朱志浩              About Research Publications Projects ...
 
-[Avatar]   Zhihao Zhu / 朱志豪
+[Avatar]   Zhihao Zhu / 朱志浩
            Master Student, Fudan University
 
            I work on efficient multimodal generative models
