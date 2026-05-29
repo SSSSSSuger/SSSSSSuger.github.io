@@ -1,0 +1,111 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import NewsList from "../components/NewsList.astro";
+import ResearchCard from "../components/ResearchCard.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
+import Footer from "../components/Footer.astro";
+import LinkButton from "../components/LinkButton.astro";
+import { experience } from "../data/experience";
+import { news } from "../data/news";
+import { publications } from "../data/publications";
+import { profile, profileLinks, seo } from "../data/profile";
+import { projects } from "../data/projects";
+import { researchInterests } from "../data/research";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="keywords" content={seo.keywords} />
+    <meta name="author" content={seo.author} />
+    <meta property="og:title" content={seo.ogTitle} />
+    <meta property="og:description" content={seo.ogDescription} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Hero />
+
+      <Section id="about" eyebrow="About Me" title="Efficient generative models for autonomous driving.">
+        <div class="prose-block">
+          <p>
+            I am a master's student at Fudan University, working on
+            <strong>multimodal generative models</strong> and
+            <strong>autonomous driving</strong>. My research focuses on efficient
+            <strong>Vision-Language-Action models</strong>, especially diffusion-
+            and flow-based methods for motion planning.
+          </p>
+          <p>
+            Recently, I have been exploring how to convert autoregressive VLAs into
+            parallel generative models through <strong>block diffusion</strong>,
+            <strong>hierarchical distillation</strong>, and
+            <strong>reinforcement learning</strong>. I am broadly interested in
+            efficient multimodal reasoning, embodied intelligence, and
+            safety-critical decision making.
+          </p>
+        </div>
+      </Section>
+
+      <Section eyebrow="News" title="Recent Updates" class="compact-section">
+        <NewsList items={news} />
+      </Section>
+
+      <Section
+        id="research"
+        eyebrow="Research Interests"
+        title={profile.focus}
+        description="My current work centers on efficient VLA planning systems, generative trajectory modeling, and reliable decision making for autonomous driving."
+      >
+        <div class="research-grid">
+          {researchInterests.map((item) => <ResearchCard item={item} />)}
+        </div>
+      </Section>
+
+      <Section
+        id="publications"
+        eyebrow="Selected Publications"
+        title="Representative papers and ongoing research"
+      >
+        <div class="publication-list">
+          {publications.map((publication) => <PublicationCard publication={publication} />)}
+        </div>
+      </Section>
+
+      <Section id="projects" eyebrow="Selected Projects" title="Research code and project materials">
+        <div class="project-grid">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </Section>
+
+      <Section id="experience" eyebrow="Experience & Education" title="Academic background">
+        <ExperienceTimeline items={experience} />
+      </Section>
+
+      <Section id="contact" eyebrow="Contact" title="Research discussions and collaborations">
+        <div class="contact-panel">
+          <p>
+            I am always open to research discussions and collaborations on efficient
+            multimodal generative models, autonomous driving, and embodied intelligence.
+          </p>
+          <div class="hero-actions" aria-label="Contact links">
+            <LinkButton href={profileLinks.email} label="Email" />
+            <LinkButton href={profileLinks.scholar} label="Google Scholar" variant="primary" />
+            <LinkButton href={profileLinks.github} label="GitHub" />
+            <LinkButton href={profileLinks.cv} label="CV" />
+          </div>
+        </div>
+      </Section>
+    </main>
+    <Footer />
+  </body>
+</html>

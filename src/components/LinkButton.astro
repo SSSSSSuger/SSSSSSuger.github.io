@@ -1,0 +1,29 @@
+---
+interface Props {
+  href?: string;
+  label: string;
+  variant?: "primary" | "secondary" | "subtle";
+}
+
+const { href, label, variant = "secondary" } = Astro.props;
+const isTodo = !href || href.includes("TODO");
+const isExternal = href?.startsWith("http");
+const className = `button button-${variant}`;
+---
+
+{
+  isTodo ? (
+    <span class={`${className} button-disabled`} aria-disabled="true" title={href || "TODO"}>
+      {label}
+    </span>
+  ) : (
+    <a
+      class={className}
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
+    >
+      {label}
+    </a>
+  )
+}

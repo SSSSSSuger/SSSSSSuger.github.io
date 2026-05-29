@@ -1,0 +1,72 @@
+---
+import type { Publication } from "../data/publications";
+
+interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+const authorParts = publication.authors.split(/(Zhihao Zhu\*?)/g);
+const linkLabels: Record<string, string> = {
+  paper: "Paper",
+  code: "Code",
+  project: "Project",
+  bibtex: "BibTeX",
+};
+const links = Object.entries(publication.links).filter(([, href]) => Boolean(href));
+---
+
+<article class="publication-card">
+  <div class="publication-media">
+    {
+      publication.image ? (
+        <>
+          <img
+            src={publication.image}
+            alt={`${publication.title} teaser`}
+            loading="lazy"
+            onerror="this.setAttribute('hidden', ''); this.nextElementSibling.removeAttribute('hidden')"
+          />
+          <div class="image-placeholder" hidden>
+            <span>Teaser coming soon</span>
+          </div>
+        </>
+      ) : (
+        <div class="image-placeholder">
+          <span>Teaser coming soon</span>
+        </div>
+      )
+    }
+  </div>
+
+  <div class="publication-body">
+    <div class="publication-meta">
+      <span class="venue-badge">{publication.venue}</span>
+      <span>{publication.year}</span>
+    </div>
+    <h3>{publication.title}</h3>
+    <p class="authors">
+      {
+        authorParts.map((part) =>
+          part.startsWith("Zhihao Zhu") ? <strong>{part}</strong> : part
+        )
+      }
+    </p>
+    <p>{publication.description}</p>
+    {
+      links.length > 0 && (
+        <div class="publication-links" aria-label={`${publication.title} links`}>
+          {links.map(([key, href]) => (
+            <a
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noreferrer" : undefined}
+            >
+              {linkLabels[key] ?? key}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>
