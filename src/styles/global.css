@@ -131,6 +131,7 @@
   .hero-avatar img,
   .avatar-placeholder {
     width: 220px;
+    height: 220px;
     aspect-ratio: 1;
     border: 1px solid var(--line);
     border-radius: 10px;
