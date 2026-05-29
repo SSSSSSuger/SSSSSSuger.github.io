@@ -1,6 +1,12 @@
 # SSSSSSuger.github.io
 
-这是一个可以直接部署到 GitHub Pages 的个人主页。
+这是一个可以直接部署到 GitHub Pages 的科研个人主页。
+
+当前主页包含：
+
+- Google Scholar 入口：`https://scholar.google.com/citations?user=qE0aPcQAAAAJ&hl=en`
+- GitHub 项目入口：`https://github.com/SSSSSSuger`
+- Research、Publications、Projects、Contact 等科研主页常用区块
 
 ## 发布方式
 
@@ -18,7 +24,7 @@ https://SSSSSSuger.github.io
 
 ## 后续可替换内容
 
-- `index.html`：修改个人介绍、项目链接和联系方式。
+- `index.html`：修改个人介绍、研究方向、论文入口、项目链接和联系方式。
 - `styles.css`：修改配色、排版和响应式布局。
 - `script.js`：目前只负责自动更新页脚年份。
 

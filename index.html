@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SSSSSSuger 的个人主页，展示项目、笔记和联系方式。"
+      content="SSSSSSuger 的科研主页，整理研究方向、论文信息、学术资料和项目代码。"
     />
-    <title>SSSSSSuger | Homepage</title>
+    <title>SSSSSSuger | Research Homepage</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" aria-label="主导航">
       <a class="brand" href="#top" aria-label="回到首页">SSSSSSuger</a>
       <nav class="nav-links" aria-label="页面导航">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#now">Now</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -24,17 +24,30 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Personal homepage</p>
+          <p class="eyebrow">Research homepage</p>
           <h1 id="hero-title">SSSSSSuger</h1>
           <p class="lead">
-            这里是我的个人主页，用来整理项目、学习记录和正在探索的方向。
-            我关注清晰的工程实现，也喜欢把想法做成可以被体验的作品。
+            这里整理我的科研资料、论文记录、学术主页和相关代码。
+            这个页面会作为研究工作的入口，连接 Google Scholar、GitHub
+            以及后续公开的项目与论文材料。
           </p>
           <div class="hero-actions" aria-label="主要链接">
-            <a class="button primary" href="https://github.com/SSSSSSuger">
+            <a
+              class="button primary"
+              href="https://scholar.google.com/citations?user=qE0aPcQAAAAJ&amp;hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google Scholar
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/SSSSSSuger"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
-            <a class="button secondary" href="#work">查看项目</a>
           </div>
         </div>
 
@@ -46,72 +59,120 @@
             height="320"
           />
           <figcaption>
-            <span>GitHub Pages</span>
-            <strong>Ready to publish</strong>
+            <span>Scholar profile</span>
+            <strong>Publications and citations</strong>
           </figcaption>
         </figure>
       </section>
 
-      <section id="about" class="section about-section" aria-labelledby="about-title">
+      <section
+        id="research"
+        class="section research-section"
+        aria-labelledby="research-title"
+      >
         <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">把学习、构建和表达放在同一个地方。</h2>
+          <p class="eyebrow">Research</p>
+          <h2 id="research-title">Research profile and interests</h2>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <h3>Focus</h3>
+            <h3>Research Questions</h3>
             <p>
-              关注 Web 开发、工程实践和可维护的用户体验，把复杂问题拆成清楚的步骤。
+              关注可验证、可复现、可扩展的研究问题，并把实验过程整理成清晰的记录。
             </p>
           </article>
           <article class="feature-card">
-            <h3>Building</h3>
+            <h3>Methods</h3>
             <p>
-              用小项目验证想法，从界面、交互到部署都尽量做成完整闭环。
+              结合论文阅读、实验评估、代码实现和结果分析，形成完整的研究闭环。
             </p>
           </article>
           <article class="feature-card">
-            <h3>Notes</h3>
+            <h3>Artifacts</h3>
             <p>
-              记录学习过程中的关键概念、踩坑经验和可复用的代码片段。
+              通过 GitHub Pages、Google Scholar 和公开仓库集中展示论文、项目和材料。
             </p>
           </article>
         </div>
       </section>
 
-      <section id="work" class="section work-section" aria-labelledby="work-title">
+      <section
+        id="publications"
+        class="section publications-section"
+        aria-labelledby="publications-title"
+      >
         <div class="section-heading">
-          <p class="eyebrow">Work</p>
-          <h2 id="work-title">Selected projects</h2>
+          <p class="eyebrow">Publications</p>
+          <h2 id="publications-title">Papers and citation record</h2>
+        </div>
+        <div class="scholar-panel">
+          <div>
+            <span class="project-tag">Google Scholar</span>
+            <h3>Latest publication list</h3>
+            <p>
+              最新论文列表、引用数据和合作者信息维护在 Google Scholar。
+              为避免页面中静态数值过期，这里保留到 Scholar 主页的直接入口。
+            </p>
+          </div>
+          <a
+            class="button primary"
+            href="https://scholar.google.com/citations?user=qE0aPcQAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Scholar
+          </a>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">Research code and materials</h2>
         </div>
         <div class="project-list">
-          <a class="project-card" href="https://github.com/SSSSSSuger?tab=repositories">
+          <a
+            class="project-card"
+            href="https://github.com/SSSSSSuger?tab=repositories"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span class="project-tag">Code</span>
             <h3>GitHub Repositories</h3>
-            <p>查看我公开的项目代码、实验和练习仓库。</p>
+            <p>公开的研究代码、实验实现和项目材料会集中整理在 GitHub。</p>
           </a>
-          <a class="project-card" href="https://github.com/SSSSSSuger/SSSSSSuger.github.io">
+          <a
+            class="project-card"
+            href="https://scholar.google.com/citations?user=qE0aPcQAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="project-tag">Papers</span>
+            <h3>Academic Publications</h3>
+            <p>通过 Google Scholar 查看论文记录、引用情况和学术更新。</p>
+          </a>
+          <a
+            class="project-card"
+            href="https://github.com/SSSSSSuger/SSSSSSuger.github.io"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span class="project-tag">Site</span>
             <h3>This Homepage</h3>
-            <p>这个站点会持续更新，作为个人资料和作品索引。</p>
-          </a>
-          <a class="project-card" href="#contact">
-            <span class="project-tag">Open</span>
-            <h3>Next Project</h3>
-            <p>新的作品会放在这里，方便快速访问和展示。</p>
+            <p>这个站点会持续作为科研资料、项目链接和个人主页的索引。</p>
           </a>
         </div>
       </section>
 
-      <section id="now" class="section now-section" aria-labelledby="now-title">
+      <section class="section now-section" aria-labelledby="now-title">
         <div class="section-heading">
-          <p class="eyebrow">Now</p>
-          <h2 id="now-title">Currently exploring</h2>
+          <p class="eyebrow">Workflow</p>
+          <h2 id="now-title">Current academic workflow</h2>
         </div>
         <div class="now-list" role="list">
-          <p role="listitem">构建更顺手的个人知识库和作品展示流程。</p>
-          <p role="listitem">学习前端工程、自动化部署和产品化表达。</p>
-          <p role="listitem">把想法尽快做成可以打开、可以分享的页面。</p>
+          <p role="listitem">把论文、代码、实验结果和复现实践放到统一入口。</p>
+          <p role="listitem">保持 Google Scholar 作为论文与引用记录的权威来源。</p>
+          <p role="listitem">后续可在这里补充 selected publications、CV 和研究方向细节。</p>
         </div>
       </section>
 
@@ -122,11 +183,26 @@
       >
         <div>
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Find me on GitHub.</h2>
+          <h2 id="contact-title">Find my research profile online.</h2>
         </div>
-        <a class="button primary" href="https://github.com/SSSSSSuger">
-          @SSSSSSuger
-        </a>
+        <div class="contact-actions">
+          <a
+            class="button primary"
+            href="https://scholar.google.com/citations?user=qE0aPcQAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Google Scholar
+          </a>
+          <a
+            class="button secondary"
+            href="https://github.com/SSSSSSuger"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
       </section>
     </main>
 
