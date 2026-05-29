@@ -400,7 +400,7 @@ const experience = [
     title: "B.Eng. / B.S. in Information Management and Information Systems",
     institution: "South China University of Technology",
     location: "Guangzhou, China",
-    period: "2021 - 2025",
+    period: "2019 - 2023",
     description: "Undergraduate study in the School of Mathematics."
   }
 ]
