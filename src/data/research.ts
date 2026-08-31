@@ -5,23 +5,18 @@ export interface ResearchInterest {
 
 export const researchInterests: ResearchInterest[] = [
   {
-    title: "Efficient VLA Models",
+    title: "Efficient Generative VLA Models",
     description:
-      "Parallel generation, block diffusion, discrete diffusion, and efficient decoding for Vision-Language-Action models.",
+      "Parallel discrete generation and efficient decoding for Vision-Language-Action models in autonomous driving.",
   },
   {
-    title: "Autonomous Driving Planning",
+    title: "AR-to-Diffusion Knowledge Transfer",
     description:
-      "Trajectory-as-language, closed-loop planning, NAVSIM / Bench2Drive evaluation, and safety-critical decision making.",
+      "Progressive adaptation and hierarchical distillation that transfer capabilities from autoregressive models to diffusion systems.",
   },
   {
-    title: "AR-to-Diffusion Distillation",
+    title: "Reliable Planning and Multimodal Reasoning",
     description:
-      "Progressive block-wise adaptation, block-wise distillation, and cross-scale distillation from autoregressive VLAs to diffusion models.",
-  },
-  {
-    title: "Reinforcement Learning for Planning",
-    description:
-      "GRPO, PDMS reward optimization, simulator-guided feedback, and safe trajectory alignment.",
+      "Preserving scene understanding and multimodal reasoning while improving the efficiency and robustness of trajectory generation.",
   },
 ];

@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://SSSSSSuger.github.io",
+  site: "https://ssssssuger.github.io",
   integrations: [
     tailwind({
       applyBaseStyles: false,

@@ -1,35 +1,29 @@
 export const profileLinks = {
   scholar: "https://scholar.google.com/citations?user=qE0aPcQAAAAJ&hl=en",
-  github: "TODO: 填写我的 GitHub 链接",
+  github: "https://github.com/SSSSSSuger",
   email: "mailto:falsestunch@gmail.com",
-  cv: "/cv.pdf",
+  cv: "",
 } as const;
 
 export const profile = {
   name: "Zhihao Zhu / 朱志浩",
   shortName: "Zhihao Zhu",
-  title: "Master Student, Fudan University",
-  focus: "Efficient Generative Vision-Language-Action Models for Autonomous Driving",
+  title: "Master’s Student at Fudan University",
+  focus: "Efficient Generative VLA Models for Autonomous Driving",
   summary:
-    "I work on efficient multimodal generative models for autonomous driving, with a focus on Vision-Language-Action models, diffusion/flow-based planning, and AR-to-diffusion distillation.",
+    "I am a master’s student at Fudan University working on efficient generative models for autonomous driving. My research focuses on transforming autoregressive Vision-Language-Action models into efficient parallel generative systems through discrete diffusion, flow matching, and hierarchical distillation. My recent work explores how to preserve multimodal reasoning while reducing the latency and exposure bias of sequential action generation.",
   avatar: "/avatar.jpg",
-  keywords: [
-    "Vision-Language-Action",
-    "Autonomous Driving",
-    "Diffusion Models",
-    "Flow Matching",
-    "Reinforcement Learning",
-    "Motion Planning",
-  ],
+  keywords: ["Efficient VLA", "Autonomous Driving", "Diffusion & Distillation"],
+  updated: "August 2026",
 } as const;
 
 export const seo = {
-  title: "Zhihao Zhu | Efficient Generative VLA Models for Autonomous Driving",
+  title: "Zhihao Zhu | Efficient Generative VLA Models",
   description:
-    "Personal academic homepage of Zhihao Zhu. Research on efficient Vision-Language-Action models, diffusion and flow-based planning, AR-to-diffusion distillation, and autonomous driving.",
+    "Academic homepage of Zhihao Zhu, a Fudan University master’s student researching efficient generative VLA models, diffusion, distillation, and autonomous driving.",
   keywords:
-    "Zhihao Zhu, Vision-Language-Action, VLA, Autonomous Driving, Diffusion Models, Flow Matching, Motion Planning, Fudan University",
+    "Zhihao Zhu, Vision-Language-Action, VLA, autonomous driving, diffusion models, flow matching, distillation, Fudan University",
   author: "Zhihao Zhu",
-  ogTitle: "Zhihao Zhu",
-  ogDescription: "Efficient Generative VLA Models for Autonomous Driving",
+  canonical: "https://ssssssuger.github.io/",
+  ogImage: "https://ssssssuger.github.io/og-image.png",
 } as const;

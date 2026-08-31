@@ -1,8 +1,8 @@
 ---
-const year = new Date().getFullYear();
+import { profile } from "../data/profile";
 ---
 
 <footer class="site-footer">
-  <p>© {year} Zhihao Zhu. Built with Astro.</p>
-  <p>Last updated: 2026.</p>
+  <p>© 2026 Zhihao Zhu</p>
+  <p>Last updated: {profile.updated} · Built with Astro</p>
 </footer>

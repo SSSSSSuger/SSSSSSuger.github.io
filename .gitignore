@@ -3,3 +3,9 @@ dist/
 .astro/
 .env
 .env.*
+*.log
+.DS_Store
+playwright-report/
+test-results/
+screenshots/
+preview-*.png

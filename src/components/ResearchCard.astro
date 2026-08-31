@@ -1,14 +1,11 @@
 ---
 import type { ResearchInterest } from "../data/research";
-
-interface Props {
-  item: ResearchInterest;
-}
-
-const { item } = Astro.props;
+interface Props { item: ResearchInterest; index: number }
+const { item, index } = Astro.props;
 ---
 
-<article class="research-card">
+<article class="research-item">
+  <span class="research-number" aria-hidden="true">0{index + 1}</span>
   <h3>{item.title}</h3>
   <p>{item.description}</p>
 </article>

@@ -2,10 +2,8 @@
 import { profile } from "../data/profile";
 
 const navItems = [
-  ["About", "#about"],
-  ["Research", "#research"],
   ["Publications", "#publications"],
-  ["Projects", "#projects"],
+  ["Research", "#research"],
   ["Experience", "#experience"],
   ["Contact", "#contact"],
 ] as const;
@@ -13,9 +11,38 @@ const navItems = [
 
 <header class="site-header">
   <nav class="nav-shell" aria-label="Main navigation">
-    <a class="brand" href="#top" aria-label="Back to top">{profile.name}</a>
-    <div class="nav-links">
-      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+    <a class="brand" href="#top" aria-label="Zhihao Zhu, back to top">{profile.name}</a>
+    <div class="desktop-nav" aria-label="Page sections">
+      {navItems.map(([label, href]) => <a href={href} data-nav-link>{label}</a>)}
     </div>
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">Menu</summary>
+      <div class="mobile-nav-panel">
+        {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+      </div>
+    </details>
   </nav>
 </header>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]")];
+  const sections = links
+    .map((link) => document.querySelector<HTMLElement>(link.hash))
+    .filter((section): section is HTMLElement => Boolean(section));
+
+  if (!("matchMedia" in window) || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).at(-1);
+        if (!visible) return;
+        links.forEach((link) => link.toggleAttribute("aria-current", link.hash === `#${visible.target.id}`));
+      },
+      { rootMargin: "-25% 0px -65%" },
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  document.querySelectorAll<HTMLAnchorElement>(".mobile-nav a").forEach((link) => {
+    link.addEventListener("click", () => link.closest("details")?.removeAttribute("open"));
+  });
+</script>

@@ -1,38 +1,31 @@
 ---
 import { profile, profileLinks } from "../data/profile";
 import LinkButton from "./LinkButton.astro";
+
+const links = [
+  { href: profileLinks.scholar, label: "Google Scholar", variant: "primary" as const },
+  { href: profileLinks.github, label: "GitHub" },
+  { href: profileLinks.email, label: "Email" },
+  ...(profileLinks.cv ? [{ href: profileLinks.cv, label: "CV" }] : []),
+];
 ---
 
 <section id="top" class="hero" aria-labelledby="hero-title">
-  <div class="hero-avatar" aria-label={`${profile.shortName} profile image`}>
-    <img
-      src={profile.avatar}
-      alt={`${profile.shortName} portrait`}
-      width="240"
-      height="240"
-      loading="eager"
-      onerror="this.setAttribute('hidden', ''); this.nextElementSibling.removeAttribute('hidden')"
-    />
-    <div class="avatar-placeholder" hidden>
-      <span>ZZ</span>
-    </div>
-  </div>
-
   <div class="hero-content">
-    <p class="hero-kicker">Academic Homepage</p>
-    <h1 id="hero-title">{profile.name}</h1>
+    <p class="hero-intro">Hello, I’m</p>
+    <h1 id="hero-title">
+      <span class="latin-name">Zhihao Zhu</span><span class="name-separator"> / </span><span class="cn-name" lang="zh-CN">朱志浩</span>
+    </h1>
     <p class="hero-title">{profile.title}</p>
     <p class="hero-summary">{profile.summary}</p>
-
     <div class="hero-actions" aria-label="Profile links">
-      <LinkButton href={profileLinks.scholar} label="Google Scholar" variant="primary" />
-      <LinkButton href={profileLinks.github} label="GitHub" />
-      <LinkButton href={profileLinks.email} label="Email" />
-      <LinkButton href={profileLinks.cv} label="CV" />
+      {links.map((link) => <LinkButton {...link} />)}
     </div>
-
-    <div class="keyword-list" aria-label="Research keywords">
-      {profile.keywords.map((keyword) => <span>{keyword}</span>)}
-    </div>
+    <ul class="keyword-list" aria-label="Research areas">
+      {profile.keywords.map((keyword) => <li>{keyword}</li>)}
+    </ul>
   </div>
+  <figure class="hero-avatar">
+    <img src={profile.avatar} alt="Portrait of Zhihao Zhu" width="420" height="420" loading="eager" fetchpriority="high" />
+  </figure>
 </section>

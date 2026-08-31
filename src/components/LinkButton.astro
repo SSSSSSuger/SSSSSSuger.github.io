@@ -1,29 +1,23 @@
 ---
 interface Props {
-  href?: string;
+  href: string;
   label: string;
-  variant?: "primary" | "secondary" | "subtle";
+  variant?: "primary" | "secondary";
 }
 
 const { href, label, variant = "secondary" } = Astro.props;
-const isTodo = !href || href.includes("TODO");
-const isExternal = href?.startsWith("http");
-const className = `button button-${variant}`;
+const isExternal = href.startsWith("http");
 ---
 
-{
-  isTodo ? (
-    <span class={`${className} button-disabled`} aria-disabled="true" title={href || "TODO"}>
-      {label}
-    </span>
-  ) : (
-    <a
-      class={className}
-      href={href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noreferrer" : undefined}
-    >
-      {label}
-    </a>
-  )
-}
+<a
+  class:list={["profile-link", { primary: variant === "primary" }]}
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+  aria-label={isExternal ? `${label} (opens in a new tab)` : label}
+>
+  <span>{label}</span>
+  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+    <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+  </svg>
+</a>

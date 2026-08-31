@@ -8,18 +8,18 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    title: "Master Student",
+    title: "Master’s Student",
     institution: "Fudan University",
     location: "Shanghai, China",
-    period: "2025 - Present",
+    period: "2025 — Present",
     description:
-      "Research on multimodal generative models, Vision-Language-Action models, and autonomous driving.",
+      "Research on efficient multimodal generative models, Vision-Language-Action models, and autonomous driving.",
   },
   {
-    title: "B.Eng. / B.S. in Information Management and Information Systems",
+    title: "Information Management and Information Systems, School of Mathematics",
     institution: "South China University of Technology",
     location: "Guangzhou, China",
-    period: "2019 - 2023",
-    description: "Undergraduate study in the School of Mathematics.",
+    period: "2019 — 2023",
+    description: "Undergraduate study in information management and information systems.",
   },
 ];

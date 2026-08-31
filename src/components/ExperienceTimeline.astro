@@ -1,26 +1,19 @@
 ---
 import type { ExperienceItem } from "../data/experience";
-
-interface Props {
-  items: ExperienceItem[];
-}
-
+interface Props { items: ExperienceItem[] }
 const { items } = Astro.props;
 ---
 
 <div class="timeline">
-  {
-    items.map((item) => (
-      <article class="timeline-item">
-        <div class="timeline-period">{item.period}</div>
-        <div>
-          <h3>{item.title}</h3>
-          <p class="timeline-institution">
-            {item.institution} · {item.location}
-          </p>
-          <p>{item.description}</p>
-        </div>
-      </article>
-    ))
-  }
+  {items.map((item) => (
+    <article class="timeline-item">
+      <time>{item.period}</time>
+      <div>
+        <h3>{item.institution}</h3>
+        <p class="timeline-role">{item.title}</p>
+        <p class="timeline-location">{item.location}</p>
+        <p>{item.description}</p>
+      </div>
+    </article>
+  ))}
 </div>
